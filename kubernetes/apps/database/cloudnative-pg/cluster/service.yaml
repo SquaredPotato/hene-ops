@@ -2,19 +2,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: production-lb
+  name: heneops-lb
   namespace: database
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: production.abchost.nl
+    external-dns.alpha.kubernetes.io/hostname: heneops.abchost.nl
     lbipam.cilium.io/ips: ${CLUSTER_CLOUDNATIVE_PG_17_IP}
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Cluster
   ports:
-    - name: production-rw
+    - name: heneops-rw
       port: 5432
       protocol: TCP
       targetPort: 5432
   selector:
-    cnpg.io/cluster: production
+    cnpg.io/cluster: heneops
     cnpg.io/instanceRole: primary

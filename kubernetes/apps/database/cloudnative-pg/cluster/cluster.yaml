@@ -3,12 +3,12 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: production
+  name: heneops
   namespace: database
   annotations:
     kyverno.io/ignore: "true"
 spec:
-  instances: 3
+  instances: 1
   imageName: ghcr.io/tensorchord/cloudnative-vectorchord:18.3-1.1.1
   enableSuperuserAccess: true
   primaryUpdateStrategy: unsupervised
@@ -18,18 +18,10 @@ spec:
     storageClass: local-hostpath
   superuserSecret:
     name: cloudnative-pg-secret
-  affinity:
-    nodeSelector:
-      nodeType: "pi"
-    tolerations:
-      - key: "node-role.kubernetes.io/control-plane"
-        operator: "Exists"
   postgresql:
     parameters:
-      max_connections: "600"
+      max_connections: "100"
       shared_buffers: 512MB
-    shared_preload_libraries:
-      - "vchord.so"
   monitoring:
     enablePodMonitor: true
   plugins:
@@ -37,13 +29,13 @@ spec:
       isWALArchiver: true
       enabled: true
       parameters:
-        barmanObjectName: production
-        serverName: &currentCluster production-v1
+        barmanObjectName: heneops
+        serverName: &currentCluster heneops-v1
 ## Note: previousCluster needs to be set to the name of the previous
 ## cluster when recovering from an existing cnpg cluster
 #  bootstrap:
 #    recovery:
-#      source: &previousCluster production-v0
+#      source: &previousCluster heneops-v0
 ## Note: Optionally, specify a timestamp to backup from.
 ## The operator selects the closest backup that was completed before that target.
 #      recoveryTarget:
@@ -54,17 +46,17 @@ spec:
 #      plugin:
 #        name: barman-cloud.cloudnative-pg.io
 #        parameters:
-#          barmanObjectName: production
+#          barmanObjectName: heneops
 #          serverName: *previousCluster
 ---
 apiVersion: barmancloud.cnpg.io/v1
 kind: ObjectStore
 metadata:
-  name: production
+  name: heneops
 spec:
   retentionPolicy: "30d"
   configuration:
-    destinationPath: s3://postgres-cloudnative.mizuto.backup/
+    destinationPath: s3://postgres-cloudnative.heneops.backup/
     endpointURL: https://s3.eu-central-1.wasabisys.com
     s3Credentials:
       accessKeyId:

@@ -3,14 +3,14 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: ScheduledBackup
 metadata:
-  name: production-backup
+  name: heneops-backup
   namespace: database
 spec:
   schedule: "@daily"
   immediate: true
   backupOwnerReference: self
   cluster:
-    name: production
+    name: heneops
   method: plugin
   target: "prefer-standby"
   pluginConfiguration:
