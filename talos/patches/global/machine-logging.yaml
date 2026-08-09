@@ -1,7 +1,7 @@
 machine:
   logging:
     destinations:
-      - endpoint: "udp://10.0.2.128:5171"
+      - endpoint: "udp://192.168.0.11:5171"
         format: "json_lines"
 #        extraTags:
 #          node: "{{ .MachineConfig.MachineNetwork }}"
@@ -9,5 +9,5 @@ machine:
 apiVersion: v1alpha1
 kind: KmsgLogConfig
 name: remote-log
-url: udp://10.0.2.128:5170
+url: udp://192.168.0.11:5170
 

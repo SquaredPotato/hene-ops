@@ -1,8 +1,5 @@
-machine:
-  nodeTaints:
-    node-role.kubernetes.io/control-plane: PreferNoSchedule
 cluster:
-  allowSchedulingOnControlPlanes: false
+  allowSchedulingOnControlPlanes: true
   apiServer:
     admissionControl:
       $$patch: delete
@@ -18,7 +15,7 @@ cluster:
     extraArgs:
       listen-metrics-urls: http://0.0.0.0:2381
     advertisedSubnets:
-      - 10.0.2.0/23
+      - 192.168.0.0/21
   proxy:
     disabled: true
   scheduler:

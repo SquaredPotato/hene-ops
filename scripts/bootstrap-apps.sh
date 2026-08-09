@@ -37,14 +37,14 @@ function apply_namespaces() {
         namespace=$(basename "${app}")
 
         # Check if the namespace resources are up-to-date
-        if kubectl get namespace "${namespace}" &>/dev/null; then
+        if kubectl get namespace "${namespace}"; then
             log info "Namespace resource is up-to-date" "resource=${namespace}"
             continue
         fi
 
         # Apply the namespace resources
-        if kubectl create namespace "${namespace}" --dry-run=client --output=yaml \
-            | kubectl apply --server-side --filename - &>/dev/null;
+        if kubectl create namespace "${namespace}" --output=yaml \
+            | kubectl apply --server-side --filename - ;
         then
             log info "Namespace resource applied" "resource=${namespace}"
         else
@@ -120,7 +120,7 @@ function sync_helm_releases() {
         log error "File does not exist" "file=${helmfile_file}"
     fi
 
-    if ! helmfile --file "${helmfile_file}" sync --hide-notes; then
+    if ! helmfile --file "${helmfile_file}" sync; then
         log error "Failed to sync Helm releases"
     fi
 

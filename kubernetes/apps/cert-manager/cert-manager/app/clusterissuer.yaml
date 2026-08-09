@@ -18,5 +18,3 @@ spec:
         selector:
           dnsZones:
             - "${SECRET_DOMAIN}"
-            - "mizu.to"
-            - "riva-va.nl"

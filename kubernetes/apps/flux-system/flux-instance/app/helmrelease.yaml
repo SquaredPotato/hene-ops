@@ -34,7 +34,7 @@ spec:
         - notification-controller
       sync:
         kind: GitRepository
-        url: "https://github.com/squaredpotato/home-ops.git"
+        url: "https://github.com/squaredpotato/hene-ops.git"
         ref: "refs/heads/main"
         path: kubernetes/flux/cluster
       commonMetadata:

@@ -20,7 +20,7 @@ spec:
       preallocateMaps: true
     bpfClockProbe: true
     bgpControlPlane:
-      enabled: true
+      enabled: false
     cgroup:
       automount:
         enabled: false
@@ -35,10 +35,10 @@ spec:
     envoy:
       enabled: false
     hubble:
-      enabled: true
+      enabled: false
       relay:
-        enabled: true
-        rollOutPods: true
+        enabled: false
+        rollOutPods: false
     ipam:
       mode: kubernetes
     ipv4NativeRoutingCIDR: 10.42.0.0/16
@@ -59,7 +59,7 @@ spec:
         enabled: true
         serviceMonitor:
           enabled: true
-      replicas: 2
+      replicas: 1
       rollOutPods: true
     pmtuDiscovery:
       enabled: true
