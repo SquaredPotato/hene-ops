@@ -35,7 +35,7 @@ spec:
       node-down-pod-deletion-policy: "delete-both-statefulset-and-deployment-pod"
       node-drain-policy: "block-for-eviction-if-contains-last-replica"
       orphanResourceAutoDeletion: "replica-data;instance"
-      backupTarget: &backupTarget "s3://longhorn.fschokkernl.backup@eu-central-1/"
+      backupTarget: &backupTarget "s3://longhorn.heneops.backup@eu-central-1/"
     metrics:
       serviceMonitor:
         enabled: true
