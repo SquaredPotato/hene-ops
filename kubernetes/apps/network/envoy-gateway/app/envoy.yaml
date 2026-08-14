@@ -60,7 +60,7 @@ spec:
   infrastructure:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: *hostname
-      lbipam.cilium.io/ips: 10.0.2.102
+      lbipam.cilium.io/ips: "${CLUSTER_EXTERNAL_ROUTE_IP}"
   listeners:
     - name: http
       protocol: HTTP
@@ -81,41 +81,41 @@ spec:
             namespace: network
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/gateway.networking.k8s.io/gateway_v1.json
-apiVersion: gateway.networking.k8s.io/v1
-kind: Gateway
-metadata:
-  name: external-direct
-  annotations:
-    external-dns.alpha.kubernetes.io/target: &hostname external-direct.${SECRET_DOMAIN}
-    gatus.home-operations.com/endpoint: |-
-      client:
-        dns-resolver: tcp://1.1.1.1:53
-      conditions: ["[STATUS] == 200"]
-      group: external
-spec:
-  gatewayClassName: envoy
-  infrastructure:
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: *hostname
-      lbipam.cilium.io/ips: 10.0.2.103
-  listeners:
-    - name: http
-      protocol: HTTP
-      port: 80
-      allowedRoutes:
-        namespaces:
-          from: Same
-    - name: https
-      protocol: HTTPS
-      port: 443
-      allowedRoutes:
-        namespaces:
-          from: All
-      tls:
-        certificateRefs:
-          - kind: Secret
-            name: ${SECRET_DOMAIN/./-}-production-tls
-            namespace: network
+#apiVersion: gateway.networking.k8s.io/v1
+#kind: Gateway
+#metadata:
+#  name: external-direct
+#  annotations:
+#    external-dns.alpha.kubernetes.io/target: &hostname external-direct.${SECRET_DOMAIN}
+#    gatus.home-operations.com/endpoint: |-
+#      client:
+#        dns-resolver: tcp://1.1.1.1:53
+#      conditions: ["[STATUS] == 200"]
+#      group: external
+#spec:
+#  gatewayClassName: envoy
+#  infrastructure:
+#    annotations:
+#      external-dns.alpha.kubernetes.io/hostname: *hostname
+#      lbipam.cilium.io/ips: 10.0.2.103
+#  listeners:
+#    - name: http
+#      protocol: HTTP
+#      port: 80
+#      allowedRoutes:
+#        namespaces:
+#          from: Same
+#    - name: https
+#      protocol: HTTPS
+#      port: 443
+#      allowedRoutes:
+#        namespaces:
+#          from: All
+#      tls:
+#        certificateRefs:
+#          - kind: Secret
+#            name: ${SECRET_DOMAIN/./-}-production-tls
+#            namespace: network
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/gateway.networking.k8s.io/gateway_v1.json
 apiVersion: gateway.networking.k8s.io/v1
@@ -128,7 +128,7 @@ metadata:
       group: internal
       conditions: ["[STATUS] == 200"]
       client:
-        dns-resolver: tcp://10.0.2.121:53
+        dns-resolver: tcp://${CLUSTER_K8S_GATEWAY_IP}:53
       ui:
         hide-hostname: true
         hide-url: true
@@ -137,7 +137,7 @@ spec:
   infrastructure:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: *hostname
-      lbipam.cilium.io/ips: 10.0.2.101
+      lbipam.cilium.io/ips: "${CLUSTER_INTERNAL_ROUTE_IP}"
   listeners:
     - name: http
       protocol: HTTP
