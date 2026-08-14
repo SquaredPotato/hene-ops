@@ -21,6 +21,7 @@ spec:
         enabled: false
     replica:
       resourcesPreset: "small"
+      replicaCount: 2
       persistence:
         enabled: false
     architecture: replication
