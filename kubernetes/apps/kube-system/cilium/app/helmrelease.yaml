@@ -10,7 +10,7 @@ spec:
     name: cilium
   interval: 1h
   values:
-    autoDirectNodeRoutes: true
+#    autoDirectNodeRoutes: true
     bandwidthManager:
       enabled: true
       bbr: true
@@ -29,7 +29,7 @@ spec:
       exclusive: false
     dashboards:
       enabled: true
-    devices: "enp+ eno+ end+"
+    devices: "enp1s0"
     endpointRoutes:
       enabled: true
     envoy:
@@ -69,7 +69,7 @@ spec:
         enabled: true
         trustCRDsExist: true
     rollOutCiliumPods: true
-    routingMode: native
+#    routingMode: native
     socketLB:
       enabled: true
       hostNamespaceOnly: false
