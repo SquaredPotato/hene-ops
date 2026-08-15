@@ -83,6 +83,7 @@ spec:
         annotations:
           lbipam.cilium.io/ips: "${quote}${CLUSTER_BLOCKY_IP}${quote}"
         externalTrafficPolicy: Local
+        internalTrafficPolicy: Cluster
         ports:
           dns-tcp:
             port: 53
