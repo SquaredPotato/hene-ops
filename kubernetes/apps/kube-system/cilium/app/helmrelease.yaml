@@ -29,7 +29,7 @@ spec:
       exclusive: false
     dashboards:
       enabled: true
-    devices: "enp1s0"
+    devices: "bond0"
     endpointRoutes:
       enabled: true
     envoy:

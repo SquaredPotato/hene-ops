@@ -1,0 +1,25 @@
+---
+clusterName: heneops
+clusterEndpoint: https://192.168.0.11:6443
+
+# renovate: datasource=github-releases depName=siderolabs/talos
+talosVersion: v1.14.1
+# renovate: datasource=docker depName=ghcr.io/siderolabs/kubelet
+kubernetesVersion: v1.37.0
+
+secretsPath: talsecret.sops.yaml
+
+nodes:
+  - host: "hene-10"
+    ip: "192.168.0.10"
+    role: control-plane
+    secureboot: true
+    schematicId: "@schematic.yaml.tpl"
+    data:
+      installDiskSelector: 'disk.wwid == "naa.5002538043584d30"'
+      longhornDiskSelector: 'disk.wwid == "eui.0000000001000000e4d25c5ae7ab5001"'
+      openEBSDiskSelector: 'disk.wwid == "eui.0000000001000000e4d25c5ae7ab5001"'
+      macAddr: "8c:04:ba:9d:41:19"
+      mtu: 1500
+      kernelModules: ["vfio_pci", "uio_pci_generic", "nvme_tcp", "ublk_drv"]
+
