@@ -21,6 +21,8 @@ spec:
     bpfClockProbe: true
     bgpControlPlane:
       enabled: false
+    nodeIPAM:
+      enabled: true
     cgroup:
       automount:
         enabled: false
