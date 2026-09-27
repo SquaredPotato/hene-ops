@@ -9,7 +9,7 @@ metadata:
     lbipam.cilium.io/ips: ${CLUSTER_CLOUDNATIVE_PG_17_IP}
 spec:
   type: LoadBalancer
-  externalTrafficPolicy: Cluster
+  externalTrafficPolicy: Local
   ports:
     - name: heneops-rw
       port: 5432

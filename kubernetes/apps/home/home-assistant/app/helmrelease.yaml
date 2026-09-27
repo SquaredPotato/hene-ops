@@ -72,7 +72,7 @@ spec:
         annotations:
           lbipam.cilium.io/ips: "${quote}${CLUSTER_HOME_ASSISTANT_IP}${quote}"
         type: LoadBalancer
-        externalTrafficPolicy: Cluster
+        externalTrafficPolicy: Local
 
     route:
       app:
