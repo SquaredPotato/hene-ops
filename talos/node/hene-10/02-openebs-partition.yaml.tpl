@@ -9,15 +9,14 @@ provisioning:
   maxSize: 50GiB
 filesystem:
   type: xfs
----
-apiVersion: v1alpha1
-kind: KubeletConfig
-config:
-  extraMounts:
-    - destination: /var/mnt/openebs-data
-      type: bind
-      source: /var/mnt/openebs-data
-      options:
-        - bind
-        - rshared
-        - rw
+#---
+#machine:
+#  kubelet:
+#    extraMounts:
+#      - destination: /var/mnt/openebs-data
+#        type: bind
+#        source: /var/mnt/openebs-data
+#        options:
+#          - bind
+#          - rshared
+#          - rw

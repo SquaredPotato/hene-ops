@@ -16,8 +16,6 @@ vars:
   TALOSCONFIG: '{{.ROOT_DIR}}/talos/clusterconfig/talosconfig'
 
 env:
-  KUBECONFIG: '{{.ROOT_DIR}}/kubeconfig'
-  SOPS_AGE_KEY_FILE: '{{.ROOT_DIR}}/age.key'
   TALOSCONFIG: '{{.TALOSCONFIG}}'
 
 includes:
