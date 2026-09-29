@@ -18,9 +18,9 @@ spec:
     matchLabels: {}
   nodeSelector:
     matchLabels:
-      workload-type: lb
+      workload-type: LoadBalancer
   interfaces:
-    - bond0         # whatever NIC carries your service VLAN
+    - enp1s0
   externalIPs: true
   loadBalancerIPs: true
 ---
