@@ -50,6 +50,8 @@ spec:
     kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
     l2announcements:
       enabled: true
+    externalIPs:
+      enabled: true
     loadBalancer:
       algorithm: maglev
       mode: dsr
