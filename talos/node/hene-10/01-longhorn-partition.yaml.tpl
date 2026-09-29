@@ -5,7 +5,7 @@ name: longhorn-data
 provisioning:
   diskSelector:
     match: {{ .Node.Data.longhornDiskSelector }}
-  maxSize: 150GiB
+  maxSize: 450GiB
 #---
 #machine:
 #  kubelet:
