@@ -31,7 +31,7 @@ spec:
       exclusive: false
     dashboards:
       enabled: true
-    devices: ethSel0
+    devices: enp1s0
     endpointRoutes:
       enabled: true
     envoy:

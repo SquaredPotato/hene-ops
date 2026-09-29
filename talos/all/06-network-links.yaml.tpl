@@ -23,6 +23,6 @@ routes:
 ---
 apiVersion: v1alpha1
 kind: Layer2VIPConfig
-link: bond0
+link: enp1s0
 name: "192.168.0.11"
 {{ end }}
