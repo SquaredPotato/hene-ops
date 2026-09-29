@@ -15,7 +15,7 @@ spec:
   primaryUpdateMethod: switchover
   storage:
     size: 20Gi
-    storageClass: openebs-hostpath
+    storageClass: local-hostpath
   superuserSecret:
     name: cloudnative-pg-secret
   postgresql:
