@@ -14,11 +14,6 @@ kind: CiliumL2AnnouncementPolicy
 metadata:
   name: l2-policy
 spec:
-  serviceSelector:
-    matchLabels: {}
-  nodeSelector:
-    matchLabels:
-      workload-type: LoadBalancer
   interfaces:
     - enp1s0
   externalIPs: true
