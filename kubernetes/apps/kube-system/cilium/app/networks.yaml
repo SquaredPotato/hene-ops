@@ -9,6 +9,21 @@ spec:
   blocks:
     - cidr: "192.168.0.0/24"
 ---
+apiVersion: cilium.io/v2alpha1
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: l2-policy
+spec:
+  serviceSelector:
+    matchLabels: {}
+  nodeSelector:
+    matchLabels:
+      workload-type: lb
+  interfaces:
+    - bond0         # whatever NIC carries your service VLAN
+  externalIPs: true
+  loadBalancerIPs: true
+---
 apiVersion: v1
 kind: Service
 metadata:
