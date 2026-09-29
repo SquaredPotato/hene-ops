@@ -12,11 +12,8 @@ selector:
   match: glob("{{ .Node.Data.macAddr }}", mac(link.hardware_addr))
 ---
 apiVersion: v1alpha1
-kind: BondConfig
-name: bond0
-links:
-  - ethSel0
-bondMode: active-backup
+kind: LinkConfig
+name: ethSel0
 mtu: {{ .Node.Data.mtu }}
 addresses:
   - address: "{{ .Node.IP }}/21"
