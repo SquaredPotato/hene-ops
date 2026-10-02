@@ -28,14 +28,14 @@ spec:
       dataEngine: v2
       v1DataEngine: false
       v2DataEngine: true
-#      defaultDataPath: /dev/disk/by-partlabel/r-longhorn-data
+      defaultDataPath: /dev/disk/by-partlabel/r-longhorn-data
+      dataEngineInterruptModeEnabled: true
       allowRecurringJobWhileVolumeDetached: true
       snapshotDataIntegrity: "enabled"
       restoreVolumeRecurringJobs: true
-      node-down-pod-deletion-policy: "delete-both-statefulset-and-deployment-pod"
-      node-drain-policy: "block-for-eviction-if-contains-last-replica"
+      nodeDownPodDeletionPolicy: "delete-both-statefulset-and-deployment-pod"
+      nodeDrainPolicy: "block-for-eviction-if-contains-last-replica"
       orphanResourceAutoDeletion: "replica-data;instance"
-      backupTarget: &backupTarget "s3://longhorn.heneops.backup@eu-central-1/"
     metrics:
       serviceMonitor:
         enabled: true
@@ -54,6 +54,6 @@ spec:
     ingress:
       enabled: false
     defaultBackupStore:
-      backupTarget: *backupTarget
+      backupTarget: "s3://longhorn.heneops.backup@eu-central-1/"
       backupTargetCredentialSecret: longhorn-wasabi-access
       pollInterval: 300
