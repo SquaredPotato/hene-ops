@@ -2,7 +2,7 @@
 JUST_UNSTABLE = "1"
 
 [tools]
-uv = "0.12.22"                        # required:template
+uv = "0.12.23"                        # required:template
 age = "1.3.2"
 cloudflared = "2026.8.3"
 flux2 = "2.9.6"
