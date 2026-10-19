@@ -8,4 +8,5 @@ resources:
   - ./helmrelease.yaml
   - ./storageClassV2.yaml
   - ./longhorn-wasabi-secret.sops.yaml
+  - ./longhorn-mizuto-secret.sops.yaml
   - ./grafanaDashboard.yaml
