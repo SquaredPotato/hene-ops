@@ -29,8 +29,6 @@ spec:
         alertmanagerConfiguration:
           name: alertmanager
         externalUrl: https://alertmanager.${SECRET_DOMAIN}
-        nodeSelector:
-          nodeType: "worker"
         storage:
           volumeClaimTemplate:
             spec:
@@ -88,8 +86,6 @@ spec:
             cpu: 100m
           limits:
             memory: 2000Mi
-        nodeSelector:
-          nodeType: "worker"
         storageSpec:
           volumeClaimTemplate:
             spec:
