@@ -18,10 +18,9 @@ data:
   LAN_VOLUMIO: 192.168.5.3
   LAN_NETKEEPER_IP: 192.168.5.1
   LAN_PRINTER_IP: 192.168.5.4
-  LAN_ZIGBEE_ADAPTER_IP: 10.0.2.123
+  LAN_ZIGBEE_ADAPTER_IP: 192.168.0.19
   # Redis DB id's
   REDIS_BLOCKY_DB: "1"
   # Service URLs
   POSTGRES_HOST: "production-rw.database.svc.cluster.local"
   POSTGRES_PORT: "5432"
-
