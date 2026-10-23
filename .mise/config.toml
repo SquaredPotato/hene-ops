@@ -24,7 +24,7 @@ talosctl = "1.14.4"
 "github:postfinance/topf" = "v0.6.1"
 yq = "4.54.1"
 zizmor = "1.31.1"
-"aqua:postfinance/topf" = "0.6.1"
+"aqua:postfinance/topf" = "0.6.2"
 
 [hooks]
 postinstall = "lefthook install"
