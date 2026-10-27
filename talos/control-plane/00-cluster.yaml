@@ -2,6 +2,17 @@ cluster:
   etcd:
     extraArgs:
       listen-metrics-urls: http://0.0.0.0:2381
+      # Reduce snapshot count to compact more frequently
+      snapshot-count: "5000"           # Default is 100000
+      # Limit the database size
+      quota-backend-bytes: "1073741824" # 1 GB instead of default 2 GB
+      # Auto-compact to prevent unbounded growth
+      auto-compaction-mode: periodic
+      auto-compaction-retention: "5m"
+      # Increase heartbeat interval to reduce CPU overhead on slow networks
+      # (defaults are 100ms / 1000ms; keep the 10:1 ratio between them)
+      heartbeat-interval: "500"
+      election-timeout: "5000"
     advertisedSubnets:
       - 192.168.0.0/21
 ---
@@ -30,6 +41,11 @@ apiVersion: v1alpha1
 kind: KubeControllerManagerConfig
 extraArgs:
   bind-address: 0.0.0.0
+  # Reduce number of concurrent operations
+  concurrent-deployment-syncs: "2"    # Default is 5
+  concurrent-replicaset-syncs: "2"    # Default is 5
+  kube-api-qps: "10"                  # Default is 20
+  kube-api-burst: "20"                # Default is 30
 ---
 apiVersion: v1alpha1
 kind: KubeCoreDNSConfig
@@ -48,6 +64,9 @@ apiVersion: v1alpha1
 kind: KubeSchedulerConfig
 extraArgs:
   bind-address: 0.0.0.0
+  # Reduce number of concurrent operations
+  kube-api-qps: "10"                  # Default is 20
+  kube-api-burst: "20"                # Default is 30
 config:
   profiles:
     - schedulerName: default-scheduler

@@ -11,3 +11,6 @@ params:
   net.ipv4.neigh.default.gc_thresh3: "16384" # Prevent ARP cache overflows
   user.max_user_namespaces: "11255"          # User Namespaces
   vm.nr_hugepages: "1024"                    # For Longhorn
+  vm.overcommit_memory: "1"                  # Allow memory overcommit (important for Kubernetes)
+  vm.swappiness: "10"                        # Reduce swappiness (Talos has no swap, but this affects cache behavior)
+  vm.min_free_kbytes: "16384"                # Reduce the minimum free memory threshold
