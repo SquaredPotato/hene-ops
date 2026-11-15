@@ -30,15 +30,15 @@ customDNS:
   filterUnmappedTypes: true
   mapping:
     printer.lan: "${LAN_PRINTER_IP}"
-    lidarr."${SECRET_DOMAIN}": "10.0.2.101"
-    radarr."${SECRET_DOMAIN}": "10.0.2.101"
-    sonarr."${SECRET_DOMAIN}": "10.0.2.101"
-    bazarr."${SECRET_DOMAIN}": "10.0.2.101"
-    qui."${SECRET_DOMAIN}": "10.0.2.101"
-    grafana."${SECRET_DOMAIN}": "10.0.2.101"
-    pgadmin."${SECRET_DOMAIN}": "10.0.2.101"
-    nas."${SECRET_DOMAIN}": "10.0.2.101"
-    longhorn."${SECRET_DOMAIN}": "10.0.2.101"
+    lidarr."${PROD_DOMAIN}": "10.0.2.101"
+    radarr."${PROD_DOMAIN}": "10.0.2.101"
+    sonarr."${PROD_DOMAIN}": "10.0.2.101"
+    bazarr."${PROD_DOMAIN}": "10.0.2.101"
+    qui."${PROD_DOMAIN }": "10.0.2.101"
+    grafana."${PROD_DOMAIN }": "10.0.2.101"
+    pgadmin."${PROD_DOMAIN }": "10.0.2.101"
+    nas."${PROD_DOMAIN }": "10.0.2.101"
+    longhorn."${PROD_DOMAIN}": "10.0.2.101"
 
 prometheus:
   enable: true
