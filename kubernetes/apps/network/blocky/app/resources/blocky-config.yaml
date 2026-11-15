@@ -34,10 +34,10 @@ customDNS:
     radarr."${PROD_DOMAIN}": "10.0.2.101"
     sonarr."${PROD_DOMAIN}": "10.0.2.101"
     bazarr."${PROD_DOMAIN}": "10.0.2.101"
-    qui."${PROD_DOMAIN }": "10.0.2.101"
-    grafana."${PROD_DOMAIN }": "10.0.2.101"
-    pgadmin."${PROD_DOMAIN }": "10.0.2.101"
-    nas."${PROD_DOMAIN }": "10.0.2.101"
+    qui."${PROD_DOMAIN}": "10.0.2.101"
+    grafana."${PROD_DOMAIN}": "10.0.2.101"
+    pgadmin."${PROD_DOMAIN}": "10.0.2.101"
+    nas."${PROD_DOMAIN}": "10.0.2.101"
     longhorn."${PROD_DOMAIN}": "10.0.2.101"
 
 prometheus:
