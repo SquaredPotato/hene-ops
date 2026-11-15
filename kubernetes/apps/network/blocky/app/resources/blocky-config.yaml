@@ -38,6 +38,7 @@ customDNS:
     grafana."${SECRET_DOMAIN}": "10.0.2.101"
     pgadmin."${SECRET_DOMAIN}": "10.0.2.101"
     nas."${SECRET_DOMAIN}": "10.0.2.101"
+    longhorn."${SECRET_DOMAIN}": "10.0.2.101"
 
 prometheus:
   enable: true
