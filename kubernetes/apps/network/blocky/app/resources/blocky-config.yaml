@@ -37,7 +37,7 @@ customDNS:
     pgadmin.${PROD_DOMAIN}: "10.0.4.101"
     nas.${PROD_DOMAIN}: "10.0.4.101"
     longhorn.${PROD_DOMAIN}: "10.0.4.101"
-    torrent.abchost.nl: "10.0.4.101"
+    torrent.${PROD_DOMAIN}: "10.0.4.101"
 
 prometheus:
   enable: true
