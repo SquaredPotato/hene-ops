@@ -28,17 +28,18 @@ customDNS:
   filterUnmappedTypes: true
   mapping:
     printer.lan: "${LAN_PRINTER_IP}"
-    lidarr.${PROD_DOMAIN}: "10.0.4.101"
-    radarr.${PROD_DOMAIN}: "10.0.4.101"
-    sonarr.${PROD_DOMAIN}: "10.0.4.101"
-    bazarr.${PROD_DOMAIN}: "10.0.4.101"
-    qui.${PROD_DOMAIN}: "10.0.4.101"
-    tui.${PROD_DOMAIN}: "10.0.4.101"
-    grafana.${PROD_DOMAIN}: "10.0.4.101"
-    pgadmin.${PROD_DOMAIN}: "10.0.4.101"
-    nas.${PROD_DOMAIN}: "10.0.4.101"
-    longhorn.${PROD_DOMAIN}: "10.0.4.101"
-    torrent.${PROD_DOMAIN}: "10.0.4.101"
+    lidarr.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    radarr.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    sonarr.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    bazarr.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    qui.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    grafana.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    pgadmin.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    nas.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    longhorn.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    slskd.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    torrent.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    tui.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
 
 prometheus:
   enable: true
