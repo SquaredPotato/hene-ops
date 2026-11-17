@@ -33,6 +33,7 @@ customDNS:
     sonarr.${PROD_DOMAIN}: "10.0.4.101"
     bazarr.${PROD_DOMAIN}: "10.0.4.101"
     qui.${PROD_DOMAIN}: "10.0.4.101"
+    tui.${PROD_DOMAIN}: "10.0.4.101"
     grafana.${PROD_DOMAIN}: "10.0.4.101"
     pgadmin.${PROD_DOMAIN}: "10.0.4.101"
     nas.${PROD_DOMAIN}: "10.0.4.101"
