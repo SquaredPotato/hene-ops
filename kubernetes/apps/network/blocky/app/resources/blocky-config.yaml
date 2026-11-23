@@ -22,6 +22,8 @@ conditional:
     alturna.direct: 100.108.0.51
     alturna.networks: 100.108.0.51
     infinigon.systems: 10.20.50.120
+    abrondijk.com: 10.20.50.120
+    brondijk.dev: 10.20.50.120
 
 customDNS:
   customTTL: 1h
