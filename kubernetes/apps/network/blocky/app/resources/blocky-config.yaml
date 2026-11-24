@@ -42,6 +42,7 @@ customDNS:
     slskd.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
     torrent.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
     tui.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
+    prometheus.${PROD_DOMAIN}: "${LAN_REMOTE_DIRECT}"
 
 prometheus:
   enable: true
